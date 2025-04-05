@@ -95,12 +95,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // 如果 URL 没有 hash，则默认设置为 #jp
   if (!window.location.hash) {
     window.location.hash = "#jp";
   }
 
   function updateLanguageFromHash() {
-    var lang = window.location.hash.replace("#", "");
+    var lang = window.location.hash.replace("#", "").trim();
+    // 可用于调试：console.log("Current language hash:", lang);
     showLanguage(lang);
   }
 
@@ -110,9 +112,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.hash = "#" + $select.value;
   });
 
+  // 初始调用更新函数，确保正确显示对应语言的内容
   updateLanguageFromHash();
 });
 </script>
+
 
 <!-- Gitalk コメント start  -->
 {% if site.gitalk.enable %}
