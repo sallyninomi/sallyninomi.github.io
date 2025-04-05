@@ -125,6 +125,26 @@ header-img: "img/post-bg-rwd.jpg"
     _render();
 </script>
 
+<!-- Gitalk コメント start  -->
+{% if site.gitalk.enable %}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23li6TBKLwPNqhlkdZ',
+        clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',
+        repo: 'comments',         // 用于存储评论 Issue 的仓库名称
+        owner: 'sallyninomi',       // 您的 GitHub 用户名
+        admin: ['sallyninomi'],     // 管理员用户名数组
+        distractionFreeMode: {{site.gitalk.distractionFreeMode}},
+        id: 'resources-new',       // 新的唯一标识符，确保建立独立的留言区
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk コメント end -->
 
 
 
