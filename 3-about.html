@@ -1,34 +1,30 @@
 ---
 layout: page
 title: "About"
-description: "为了让更多中国人能融入国际语运动而作"
+description: "私の生活と学びの軌跡を記録するために作成"
 header-img: "img/post-bg-rwd.jpg"
 ---
 
 <!-- Language Selector -->
 <!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
+    <option value="0" selected> 日本語 </option>
+    <option value="1"> English </option>
 </select> -->
 
-<!-- Chinese Version -->
-<div class="zh post-container">
-
-    <!--copied from markdown -->
+<!-- Jpanese Version -->
+<div class="jp post-container">
     <blockquote><p>冰冻三尺 非一日之寒<br>
     积土成山 非斯须之作</p></blockquote>
 
-    <p>Hi，我是<strong>Dr. Henri Jambo</strong>，现旅居世界上著名的多元文化城市——蒙特利尔。在魁北克，我们不仅感受到英语、法语的强烈冲突，甚至也能感受到阿拉伯语、中文等多种语言的相互碰撞。</p>
+    <p>こんにちは、私は<strong>MA JIULAN</strong>です。中国広東省出身で、現在は日本石川県金沢市に住んでいます。2018年に日本へ渡り、以降6年以上にわたり日本での学びと生活を重ねています。北陸先端科学技術大学院大学では知識科学を専攻しており、学問だけでなく、異文化交流を通じて日中両国の文化の魅力や違いを実感しています。</p>
 
-    <p>同时我深知中国也许是世界上英语学习人均投入最多的国家，但中国人学好英语的不多，社会资源浪费很大。</p>
+    <p>私の生活は、古き良き伝統と現代の多様性が交差する日本の魅力を肌で感じる日々です。</p>
     
-    <p>为了让全世界都有一门共同的、简单的外语可以学习，降低外语学习的成本并让大家相互沟通更容易，我设计了这门中西融合的人造国际语。</p>
+    <p>留学中に培った経験を通して、さまざまな価値観や文化が共存する社会の可能性に情熱を感じています。</p>
     
-    <p>她是对世界语和其他国际语的传承，也希望她能超越世界语。</p>
+    <p>皆さんと知識や経験を共有し、互いに刺激を受けながら成長できることを楽しみにしています。</p>
     
-    <p>希望更多的人加入到这个社群中，共同成长。这是新的希望！</p>
-
-    <p>本网站为三叶语官方网站。您也可关注知乎专栏<a href="https://zhuanlan.zhihu.com/Artificial-International-Language">👉人造国际语</a>。如果您有什么建议，欢迎提出探讨~</p>
+    <p>どうぞ気軽に訪れてください！</p>
 
     <p></p>
     
@@ -39,28 +35,21 @@ header-img: "img/post-bg-rwd.jpg"
     <blockquote><p>Yet another iOS Developer. <br>
     Yet another Life-long Student.</p></blockquote>
 
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
+    <p>Hi, I'm <strong>MA JIULAN</strong>. I'm originally from Guangdong, China, and I currently reside in Kanazawa, Ishikawa, Japan. I came to Japan in 2018 and have been studying and living here for over six years. I am pursuing my master's degree in Knowledge Science at Hokuriku Advanced Institute of Science and Technology, where I not only advance my academic pursuits but also experience the diverse cultural exchanges between Japan and China.</p>
 
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
+    <p>My life in Japan is a daily journey where traditional values and modern diversity coexist, allowing me to fully appreciate the unique charm of this country.</p>
     
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
-
-    <h5>Talks</h5>
-
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
-</div> -->
+    <p>Through my study abroad experience, I have become passionate about the potential of societies that embrace various values and cultures. I look forward to sharing my knowledge and experiences with you, and I hope we can grow together through mutual inspiration.</p>
+    
+    <p>Feel free to visit anytime!</p>
+</div>
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
     // get nodes
-    var $zh = document.querySelector(".zh");
+    var $jp = document.querySelector(".jp");
     var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
+    var $select = document.querySelector(".sel-lang");
 
     // bind hashchange event
     window.addEventListener('hashchange', _render);
@@ -85,7 +74,7 @@ header-img: "img/post-bg-rwd.jpg"
     // handle select change
     function onLanChange(index){
         if(index == 0){
-            window.location.hash = "#zh"
+            window.location.hash = "#jp"
         }else{
             window.location.hash = "#en"
         }
@@ -96,7 +85,7 @@ header-img: "img/post-bg-rwd.jpg"
 </script>
 
 
-<!-- Gitalk 评论 start  -->
+<!-- Gitalk コメント start  -->
 {% if site.gitalk.enable %}
 <!-- Gitalk link  -->
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -116,30 +105,25 @@ header-img: "img/post-bg-rwd.jpg"
     gitalk.render('gitalk-container');
 </script>
 {% endif %}
-<!-- Gitalk end -->
+<!-- Gitalkコメント終了 -->
 
- <!-- disqus 评论框 start  -->
+ <!-- disqus コメント start  -->
 {% if site.disqus.enable %}
-
 <div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-    </div>
+    <div id="disqus_thread" class="disqus-thread"></div>
 </div>
-<!-- disqus 评论框 end -->
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus.username}}";
     var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
     var disqus_url = "{{site.url}}{{page.url}}";
 
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var dsq = document.createElement('script'); 
+        dsq.type = 'text/javascript'; 
+        dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
 {% endif %}
 
