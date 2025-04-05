@@ -75,43 +75,43 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
-    // get nodes
+    // 获取节点
     var $jp = document.querySelector(".jp");
     var $en = document.querySelector(".en");
     var $select = document.querySelector(".sel-lang");
 
-    // bind hashchange event
+    // 监听 hashchange 事件
     window.addEventListener('hashchange', _render);
 
-    // handle render
+    // 根据 URL hash 切换显示
     function _render(){
         var _hash = window.location.hash;
-        // en
+        // 英文版
         if(_hash == "#en"){
             $select.selectedIndex = 1;
             $en.style.display = "block";
-            $zh.style.display = "none";
-        // zh by default
-        }else{
-            // not trigger onChange, otherwise cause a loop call.
+            $jp.style.display = "none";
+        // 默认显示日语版
+        } else {
             $select.selectedIndex = 0;
-            $zh.style.display = "block";
+            $jp.style.display = "block";
             $en.style.display = "none";
         }
     }
 
-    // handle select change
+    // 处理下拉框变化
     function onLanChange(index){
         if(index == 0){
-            window.location.hash = "#jp"
-        }else{
-            window.location.hash = "#en"
+            window.location.hash = "#jp";
+        } else {
+            window.location.hash = "#en";
         }
     }
 
-    // init
+    // 初始化
     _render();
 </script>
+
 
 <!-- Gitalk コメント start  -->
 {% if site.gitalk.enable %}
