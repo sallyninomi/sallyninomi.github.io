@@ -84,3 +84,24 @@ header-img: "img/post-bg-rwd.jpg"
     _render();
 </script>
 
+<!-- Gitalk コメント start  -->
+{% if site.gitalk.enable %}
+<!-- 引入 Gitalk 样式和脚本 -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'Ov23li6TBKLwPNqhlkdZ',           // 您的 Client ID
+        clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',   // 您的 Client Secret
+        repo: 'comments',                            // 存放评论 Issue 的仓库名称（例如 “comments”）
+        owner: 'sallyninomi',                         // 您的 GitHub 用户名
+        admin: ['sallyninomi'],                       // 具有管理员权限的用户名数组
+        distractionFreeMode: false,                  // 是否启用无干扰模式，根据需要设置
+        id: 'about-new'                              // 唯一标识符，确保与旧留言区区分（例如为 “about-new”）
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk コメント end -->
