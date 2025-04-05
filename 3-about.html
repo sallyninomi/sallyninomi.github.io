@@ -100,7 +100,7 @@ header-img: "img/post-bg-rwd.jpg"
     owner: '{{site.gitalk.owner}}',
     admin: ['{{site.gitalk.admin}}'],
     distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'sallyninomi-new',
+    id: 'about',
     });
     gitalk.render('gitalk-container');
 </script>
@@ -114,8 +114,8 @@ header-img: "img/post-bg-rwd.jpg"
 </div>
 <script type="text/javascript">
     var disqus_shortname = "{{site.disqus.username}}";
-    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}-new";
-    var disqus_url = "{{site.url}}{{page.url}}?new=true}";
+    var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
 
     (function() {
         var dsq = document.createElement('script'); 
