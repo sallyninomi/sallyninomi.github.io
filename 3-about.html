@@ -7,12 +7,12 @@ header-img: "img/post-bg-rwd.jpg"
 
 <!-- Language Selector -->
 <select class="sel-lang">
-  <option value="jp" selected>日本語</option>
+  <option value="jp">日本語</option>
   <option value="en">English</option>
 </select>
 
 <!-- Japanese Version -->
-<div class="jp post-container">
+<div class="jp post-container" style="display: none;">
   <blockquote>
     <p>為せば成る<br>
     All about that hustle</p>
@@ -47,83 +47,5 @@ header-img: "img/post-bg-rwd.jpg"
     Yet another Life-long Student.</p>
   </blockquote>
 
-  <p>Hi, I'm <strong>MA JIULAN</strong>. I'm originally from Guangdong, China, and I currently reside in Kanazawa, Ishikawa, Japan. I came to Japan in 2018 and have been studying and living here for over six years. I am pursuing my master's degree in Knowledge Science at Hokuriku Advanced Institute of Science and Technology, where I not only advance my academic pursuits but also experience the diverse cultural exchanges between Japan and China.</p>
+  <p>Hi, I'm <strong>MA JIULAN</strong>. I'm originally from Guangdong, China, and I currently reside in Kanazawa, Ishikawa, Japan. I came to Japan in 2018 and have been studying and living here for over six years. I am pursuing my master's degree in Knowledge
 
-  <p>My life in Japan is a daily journey where traditional values and modern diversity coexist, allowing me to fully appreciate the unique charm of this country.</p>
-  
-  <p>Through my study abroad experience, I have become passionate about the potential of societies that embrace various values and cultures. I look forward to sharing my knowledge and experiences with you, and I hope we can grow together through mutual inspiration.</p>
-  
-  <p>Feel free to visit anytime!</p>
-  
-  <!-- Resume Section -->
-  <div class="resume" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.05); border-radius: 5px;">
-    <div style="text-align: center; margin-bottom: 15px;">
-      <img src="{{ site.baseurl }}/img/myphoto.jpg" alt="my photo" style="max-width: 150px; border-radius: 50%;">
-    </div>
-    <div style="text-align: center;">
-      <h2 style="font-size: 24px; margin-bottom: 10px;">MA JIULAN</h2>
-      <p style="font-size: 16px;">Date of Birth: 1998/09/20</p>
-    </div>
-  </div>
-</div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  // 获取节点
-  var $jp = document.querySelector(".jp");
-  var $en = document.querySelector(".en");
-  var $select = document.querySelector(".sel-lang");
-
-  // 根据 URL hash 切换显示
-  function _render(){
-    var _hash = window.location.hash;
-    if(_hash === "#en"){
-      $select.value = "en";
-      $en.style.display = "block";
-      $jp.style.display = "none";
-    } else {
-      $select.value = "jp";
-      $jp.style.display = "block";
-      $en.style.display = "none";
-    }
-  }
-
-  // 监听 hashchange 事件
-  window.addEventListener('hashchange', _render);
-
-  // 处理下拉框变化
-  $select.addEventListener("change", function(){
-    if($select.value === "jp"){
-      window.location.hash = "#jp";
-    } else {
-      window.location.hash = "#en";
-    }
-  });
-
-  // 初始化，根据当前 hash 值显示对应内容
-  _render();
-});
-</script>
-
-<!-- Gitalk コメント start  -->
-{% if site.gitalk.enable %}
-<!-- 引入 Gitalk 样式和脚本 -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-    clientID: 'Ov23li6TBKLwPNqhlkdZ',           // 您的 Client ID
-    clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',   // 您的 Client Secret
-    repo: 'comments',                            // 存放评论 Issue 的仓库名称（例如 “comments”）
-    owner: 'sallyninomi',                         // 您的 GitHub 用户名
-    admin: ['sallyninomi'],                       // 具有管理员权限的用户名数组
-    distractionFreeMode: false,                  // 是否启用无干扰模式，根据需要设置
-    id: 'about-new'                              // 唯一标识符，确保与旧留言区区分（例如为 “about-new”）
-  });
-  gitalk.render('gitalk-container');
-</script>
-{% endif %}
-<!-- Gitalk コメント end -->
