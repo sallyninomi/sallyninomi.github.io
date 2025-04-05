@@ -5,125 +5,48 @@ description: "No guts, no glory"
 header-img: "img/post-bg-rwd.jpg"
 ---
 
-<!-- Language Selector -->
- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 日本語 </option>
-    <option value="1"> English </option>
-</select>
-
 <!-- Japanese Version -->
-<div class="jp post-container">
+<div class="post-container">
+  <blockquote>
+    <p>留学生活で培った知識と経験が、未来を支えます。</p>
+  </blockquote>
 
-    <!--copied from markdown -->
-    <blockquote><p>留学生活で培った知識と経験が、未来を支えます。</p>
-    </blockquote>
+  <p>（随時更新中ですので、ぜひまたお立ち寄りください。）</p>
 
-    <p>（随時更新中ですので、ぜひまたお立ち寄りください。）</p>
-
-
-    <p></p>
+  <p></p>
         
-<h3 id="toc_0">学習</h3>
+  <h3 id="toc_0">学習</h3>
+  <ul>
+    <li>
+      <a href="{{ site.baseurl }}/files/research-Introduce.pdf" target="_blank">
+        研究紹介（PDF）
+      </a>
+    </li>
+    <!-- 根据需要继续添加 PDF 链接 -->
+  </ul>
 
-<ul>
-</ul>
+  <h3 id="toc_1">生活</h3>
+  <ul>
+  </ul>
 
-<h3 id="toc_1">生活</h3>
+  <h3 id="toc_2">個人ニュース</h3>
+  <ul>
+  </ul>
 
-<ul>
-</ul>
+  <h3 id="toc_3">趣味・その他</h3>
+  <ul>
+  </ul>
 
-<h3 id="toc_2">個人ニュース</h3>
+  <hr>
 
-<ul>
-</ul>
-
-<h3 id="toc_3">趣味・その他</h3>
-
-<ul>
-</ul>
-
-<hr>
-
-<small> <font color="a0a9a9">
-<b>特記事項：</b>
-<li>私自身の留学生活や日々の学びを反映して改良中です。今後変更される可能性がありますのでご了承ください。</li>
-<li>不一致がある場合は直接私までお問い合わせください。</li>
-</font>
-<small>
-        
+  <small>
+    <font color="a0a9a9">
+      <b>特記事項：</b>
+      <li>留学生活や日々の学びを反映して改良中です。今後変更される可能性がありますのでご了承ください。</li>
+      <li>不一致がある場合は直接私までお問い合わせください。</li>
+    </font>
+  </small>
 </div>
-
-<!-- English Version -->
-<!-- <div class="en post-container">
-    <blockquote><p>No guts, no glory</p></blockquote>
-
-    <p>Hi, I am <strong>MA JIULAN</strong>，you can call me <strong>Sally</strong>.Originally from Guangdong, China, I moved to Japan in 2018 to pursue my master’s degree in Knowledge Science at Hokuriku Advanced Institute of Science and Technology. My dynamic journey in Kanazawa, enriched by vibrant multicultural experiences, has taught me that boldness and perseverance are the keys to success. Drawing on my energetic study abroad experience, I have gathered a collection of resources for learning the San Ye language to inspire and empower fellow learners. (Updated regularly, so please check back often.)</p>
-
-    <h3 id="toc_0">Learning</h3>
-    <ul>
-    </ul>
-
-    <h3 id="toc_1">Life</h3>
-    <ul>
-    </ul>
-
-    <h3 id="toc_2">Personal News</h3>
-    <ul>
-    </ul>
-
-    <h3 id="toc_3">Hobbies & Others</h3>
-    <ul>
-    </ul>
-
-    <hr>
-
-    <small style="color:#a0a9a9">
-        <b>Note:</b>
-        <ul>
-        </ul>
-    </small>
-
-</div>
-
-<!-- Handle Language Change -->
-<script type="text/javascript">
-    // 获取日语与英语内容的 DOM 节点
-    var $jp = document.querySelector(".jp");  // 日语版内容容器
-    var $en = document.querySelector(".en");  // 英文版内容容器
-    var $select = document.querySelector("select"); // 语言选择下拉框
-
-    // 监听 URL hash 变化事件，调用 _render() 更新显示
-    window.addEventListener('hashchange', _render);
-
-    // _render() 根据 URL hash 值显示对应语言内容
-    function _render(){
-        var _hash = window.location.hash;
-        // 当 hash 为 "#en" 时，显示英文版
-        if(_hash == "#en"){
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $jp.style.display = "none";
-        } else {
-            // 默认显示日语版
-            $select.selectedIndex = 0;
-            $jp.style.display = "block";
-            $en.style.display = "none";
-        }
-    }
-
-    // 当下拉框选项变化时，根据所选值修改 URL hash 值，从而触发语言切换
-    function onLanChange(index){
-        if(index == 0){
-            window.location.hash = "#jp";
-        } else {
-            window.location.hash = "#en";
-        }
-    }
-
-    // 初始化，确保页面加载时根据当前 hash 显示正确的语言内容
-    _render();
-</script>
 
 <!-- Gitalk コメント start  -->
 {% if site.gitalk.enable %}
@@ -132,19 +55,12 @@ header-img: "img/post-bg-rwd.jpg"
 
 <div id="gitalk-container"></div>
 <script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: 'Ov23li6TBKLwPNqhlkdZ',
-        clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',
-        repo: 'comments',         // 用于存储评论 Issue 的仓库名称
-        owner: 'sallyninomi',       // 您的 GitHub 用户名
-        admin: ['sallyninomi'],     // 管理员用户名数组
-        distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-        id: 'resources-new',       // 新的唯一标识符，确保建立独立的留言区
-    });
-    gitalk.render('gitalk-container');
-</script>
-{% endif %}
-<!-- Gitalk コメント end -->
+  var gitalk = new Gitalk({
+      clientID: 'Ov23li6TBKLwPNqhlkdZ',
+      clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',
+      repo: 'comments',
+      owner: '
+
 
 
 
