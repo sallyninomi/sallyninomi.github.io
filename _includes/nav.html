@@ -24,17 +24,31 @@
                         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                     </li>
                     {% endif %}{% endfor %}
+                    
+                    <!-- 方案二：在移动设备显示个人信息下拉菜单 -->
+                    <li class="dropdown visible-xs">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            個人情報 <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li style="text-align: center; padding: 10px;">
+                                <img src="{{ site.baseurl }}/img/myphoto.jpg" alt="個人写真" style="max-width: 100px; border-radius: 50%;">
+                            </li>
+                            <li style="padding: 10px; font-size: 14px;">
+                                私は MA JIULAN です。金沢での留学生活や異文化交流、学術探求を通じて成長しています。
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
+    <!-- /.container-fluid -->
 </nav>
+
 <script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
+    // 以下代码为导航栏的开合效果
     var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
     var $navbar = document.querySelector('#huxblog_navbar');
@@ -42,44 +56,31 @@
 
     var __HuxNav__ = {
         close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
+            $navbar.className = "";
             setTimeout(function(){
-                // prevent frequently toggle
                 if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
+                    $collapse.style.height = "0px";
                 }
-            },400)
+            }, 400);
         },
         open: function(){
-            $collapse.style.height = "auto"
+            $collapse.style.height = "auto";
             $navbar.className += " in";
         }
-    }
+    };
 
-    // Bind Event
     $toggle.addEventListener('click', function(e){
         if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
+            __HuxNav__.close();
+        } else {
+            __HuxNav__.open();
         }
-    })
+    });
 
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
     document.addEventListener('click', function(e){
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
         __HuxNav__.close();
-    })
+    });
 </script>
+
