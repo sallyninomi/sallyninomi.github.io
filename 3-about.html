@@ -47,5 +47,82 @@ header-img: "img/post-bg-rwd.jpg"
     Yet another Life-long Student.</p>
   </blockquote>
 
-  <p>Hi, I'm <strong>MA JIULAN</strong>. I'm originally from Guangdong, China, and I currently reside in Kanazawa, Ishikawa, Japan. I came to Japan in 2018 and have been studying and living here for over six years. I am pursuing my master's degree in Knowledge
+  <p>Hi, I'm <strong>MA JIULAN</strong>. I'm originally from Guangdong, China, and I currently reside in Kanazawa, Ishikawa, Japan. I came to Japan in 2018 and have been studying and living here for over six years. I am pursuing my master's degree in Knowledge Science at Hokuriku Advanced Institute of Science and Technology, where I not only advance my academic pursuits but also experience the diverse cultural exchanges between Japan and China.</p>
 
+  <p>My life in Japan is a daily journey where traditional values and modern diversity coexist, allowing me to fully appreciate the unique charm of this country.</p>
+  
+  <p>Through my study abroad experience, I have become passionate about the potential of societies that embrace various values and cultures. I look forward to sharing my knowledge and experiences with you, and I hope we can grow together through mutual inspiration.</p>
+  
+  <p>Feel free to visit anytime!</p>
+  
+  <!-- Resume Section -->
+  <div class="resume" style="margin-top: 30px; padding: 20px; background: rgba(0,0,0,0.05); border-radius: 5px;">
+    <div style="text-align: center; margin-bottom: 15px;">
+      <!-- 修改文件名为"my photo.jpg"，保持与日语版本一致 -->
+      <img src="{{ site.baseurl }}/img/my photo.jpg" alt="my photo" style="max-width: 150px; border-radius: 50%;">
+    </div>
+    <div style="text-align: center;">
+      <h2 style="font-size: 24px; margin-bottom: 10px;">MA JIULAN</h2>
+      <p style="font-size: 16px;">Date of Birth: 1998/09/20</p>
+    </div>
+  </div>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var $jp = document.querySelector(".jp");
+  var $en = document.querySelector(".en");
+  var $select = document.querySelector(".sel-lang");
+
+  function showLanguage(lang) {
+    if (lang === "en") {
+      $jp.style.display = "none";
+      $en.style.display = "block";
+      $select.value = "en";
+    } else {
+      $jp.style.display = "block";
+      $en.style.display = "none";
+      $select.value = "jp";
+    }
+  }
+
+  if (!window.location.hash) {
+    window.location.hash = "#jp";
+  }
+
+  function updateLanguageFromHash() {
+    var lang = window.location.hash.replace("#", "");
+    showLanguage(lang);
+  }
+
+  window.addEventListener("hashchange", updateLanguageFromHash, false);
+
+  $select.addEventListener("change", function() {
+    window.location.hash = "#" + $select.value;
+  });
+
+  updateLanguageFromHash();
+});
+</script>
+
+<!-- Gitalk コメント start  -->
+{% if site.gitalk.enable %}
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'Ov23li6TBKLwPNqhlkdZ',
+    clientSecret: '71a754d109c293b99ec666023ee74718c4c58f5a',
+    repo: 'comments',
+    owner: 'sallyninomi',
+    admin: ['sallyninomi'],
+    distractionFreeMode: false,
+    id: 'about-new'
+  });
+  gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk コメント end -->
