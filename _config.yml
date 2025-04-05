@@ -3,8 +3,7 @@ title: ようこそ、MA JIULANの世界へ
 SEOTitle: いつでもおいで～！あなたの訪問、楽しみにしてるよ！
 header-img: img/post-bg-desk.jpg
 email: sallyninomiya@gmail.com
-description: "学びと生活の軌跡を記録、成長のストーリーを発信。"
-keyword: "個人成長、学術探求、学びの軌跡"
+
 url: "https://sallyninomi.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://sallyninomi.github.io/" # you code repository
