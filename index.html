@@ -23,19 +23,21 @@ description: "学びと生活の軌跡を記録し、成長のストーリーを
   </aside>
 
  <!-- 右侧：最新更新区域 -->
-<section class="main-content" style="flex: 0 0 70%; max-width: 70%; padding: 20px; box-sizing: border-box;">
-  <h2 style="text-align: left; margin-bottom: 20px;">最新情報</h2>
-  <ul>
-    {% for post in site.posts limit:5 %}
-    <li style="margin-bottom:10px;">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        {{ post.categories | join: '-' }}-{{ post.title }}
-      </a>
-      <span> ({{ post.date | date: "%Y-%m-%d" }})</span>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+  <section class="main-content" style="flex: 0 0 70%; max-width: 70%; padding: 20px; box-sizing: border-box;">
+    <h2 style="text-align: left; margin-bottom: 20px;">最新情報</h2>
+    <ul>
+      {% for post in site.posts limit:5 %}
+        <li style="margin-bottom:10px;">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {%- assign cat0 = post.categories[0] -%}
+            {%- assign cat1 = post.categories[1] -%}
+            【{{ cat0 }}】{{ cat1 }}-{{ post.title }}
+          </a>
+          <span> ({{ post.date | date: "%Y-%m-%d" }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 
 
 </div>
