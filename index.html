@@ -23,29 +23,22 @@ description: "学びと生活の軌跡を記録し、成長のストーリーを
   <!-- 右侧：最新更新区域 -->
   <section class="main-content" style="flex: 0 0 70%; max-width: 70%; padding: 20px; box-sizing: border-box;">
     <h2 style="text-align: left; margin-bottom: 20px;">最新情報</h2>
-    
-    <!-- 调试输出：显示总文章数 -->
-    <p>総記事数：{{ site.posts | size }}</p>
-    
     <ul>
       {% for post in site.posts limit:5 %}
+        {%- assign cat0 = post.categories[0] | default: "未設定" -%}
+        {%- assign cat1 = post.categories[1] | default: "未設定" -%}
         <li style="margin-bottom:10px;">
-          {%- assign cat0 = post.categories[0] | default: "未設定" -%}
-          {%- assign cat1 = post.categories[1] | default: "未設定" -%}
           <a href="{{ post.url | prepend: site.baseurl }}">
             【{{ cat0 }}】{{ cat1 }}-{{ post.title }}
           </a>
           <span> ({{ post.date | date: "%Y-%m-%d" }})</span>
         </li>
       {% endfor %}
-      
-      <!-- 如果您想直接在最新情報中显示特定的 PDF 文件链接，可以直接添加如下列表项 -->
       <li style="margin-bottom:10px;">
         <a href="{{ site.baseurl }}/flies/research-Introduce.pdf" target="_blank">
           【RESOURCES】学習-研究紹介（PDF）
         </a>
       </li>
-      
     </ul>
   </section>
 
