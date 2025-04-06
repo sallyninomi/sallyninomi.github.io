@@ -15,24 +15,27 @@ description: "学びと生活の軌跡を記録し、成長のストーリーを
       <div style="text-align: center;">
         <h2 style="font-size: 24px; margin-bottom: 10px;">MA JIULAN</h2>
         <p style="font-size: 16px;">生年月日: 1998年9月20日</p>
+        <p style="font-size: 16px;">e-mail: sallyninomiya@gmail.com</p>
+        <p style="font-size: 16px;">趣味: アニメ、水泳</p>
         <!-- 这里您可以添加更多简历信息，例如联系方式、简介等 -->
       </div>
     </div>
   </aside>
 
-  <!-- 右侧：最新更新区域 -->
-  <section class="main-content" style="flex: 0 0 70%; max-width: 70%; padding: 20px; box-sizing: border-box;">
-    <h2>最新情報</h2>
-    <ul>
-      {% for post in site.posts limit:5 %}
-      <li style="margin-bottom:10px;">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          {{ post.categories | join: '-' }}-{{ post.title }}
-        </a>
-        <span> ({{ post.date | date: "%Y-%m-%d" }})</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
+ <!-- 右侧：最新更新区域 -->
+<section class="main-content" style="flex: 0 0 70%; max-width: 70%; padding: 20px; box-sizing: border-box;">
+  <h2 style="text-align: left; margin-bottom: 20px;">最新情報</h2>
+  <ul>
+    {% for post in site.posts limit:5 %}
+    <li style="margin-bottom:10px;">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.categories | join: '-' }}-{{ post.title }}
+      </a>
+      <span> ({{ post.date | date: "%Y-%m-%d" }})</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
 
 </div>
